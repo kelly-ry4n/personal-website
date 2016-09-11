@@ -87,9 +87,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
-personalwebsite/frontend/node_modules/
-personalwebsite/frontend/bundles/
-personalwebwite/frontend/assets/bundles/**
+personalwebsite/frontend/node_modules
+personalwebsite/frontend/bundles
+personalwebwite/frontend/assets/bundles
 static/
 
 *.swp
