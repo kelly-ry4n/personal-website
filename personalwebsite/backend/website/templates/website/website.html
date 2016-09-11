@@ -1,0 +1,17 @@
+{% load render_bundle from webpack_loader %}
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
+  </head>
+  <body>
+
+    <script src="static/jquery/jquery-3.1.0.min.js"></script>
+    <div id="react-app"></div>
+    {% render_bundle 'main' %}
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </body>
+</html>

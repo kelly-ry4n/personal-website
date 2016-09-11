@@ -1,5 +1,21 @@
-$light-blue: #2199e8;
-.active {
-    background-color: $light-blue;
-    color: white;
+#banner {
+    img {
+        width: 40%;
+    }
+}
+#banner-footer {
+    div {
+        div {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+#main-content {
+    margin-top: 4em;
+}
+
+.divider {
+    margin-top: 4em;
+    margin-bottom: 4em;
 }

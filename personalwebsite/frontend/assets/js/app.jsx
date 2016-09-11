@@ -2,98 +2,127 @@ var React = require('react')
 
 const Markdown = require('react-markdown');
 const connect = require('react-redux').connect
+const Link = require('react-router').Link
+
 
 exports = module.exports = {};
 
-exports.About = React.createClass({
+AboutContent = React.createClass({
     render () {
         return <div>
-            <h2> hi </h2>
-            
-            This is kelly<br />
-            <a className="btn waves-effect btn-raised light-green" href="#"> back to the shadows </a>
+            hiii
 
+            </div>
+    }
+})
+exports.About = React.createClass({
+    render () {
+       return <Container>
+           <AboutContent />
+       </Container>
+    }
+
+})
+
+HomePageCenterCol = React.createClass({
+    render () {
+        return <div className="row">
+            Hi<br/>
+            Hi<br/>
         </div>
     }
 
 })
-exports.ExampleComponent = React.createClass({
+
+
+NavBar = React.createClass({
+    render () {
+        console.log( window.location.pathname)
+        return <div className="navbar-fixed">
+    <nav>
+      <div className="nav-wrapper green darken-3">
+        <a href="#" className="brand-logo center">Kelly Ryan</a>
+      </div>
+    </nav>
+  </div>
+        
+}
+})
+
+Container = React.createClass({
    render () {
-       return <div className="container">
-           <div className="row">
-               <div className="col m3">
-                   <VisibleStickyPageNav />
+       console.log(this.props)
+       return <div>
+           <div id="banner" className="red lighten-2 section">
+               <div className="container fullscreen">
+                       <h1 className="center-on-small-only header white-text">Kelly Ryan.</h1>
+                       <div className="row center">
+                           <div className="header col s12 center">
+                               <h4 className="header white-text">An awesome dude who can make websites using Materialize.</h4>
+                           </div>
+                           <img src="/static/website/img1.png" alt="Kelly on a mountain" />
+                           <div className="header col s12 center">
+                               <h4 className="header white-text">And also makes cool pictures from primitives using a go program he found online.</h4>
+                           </div>
+                       </div>
                </div>
-               <div className="col m9">
-                   <VisibleIpsumList />
+           </div>
+           <div id="banner-footer" className="section grey darken-2 white-text">
+               <div className="container">
+                   <div className="row no-bottom-margin">
+                       <p className="col s12 grey-text text-lighten-1">A cool grey footer!</p>
+                   </div>
+               </div>
+           </div>
+           <div className="container section" id="main-content">
+               <div className="row">
+                   <div className="col s6 offset-s3">
+                       <img className="responsive-img" alt="glaciers" src="/static/website/img2.png" />
+                   </div>
+               </div>
+               <div className="divider"></div>
+               <div className="row">
+                   <h4 className="center red-text text-lighten-2">"I also like to walk up things all the way to the top of them. Even if it is a fairly long way."</h4>
+               </div>
+               <div className="divider"></div>
+               <div className="row">
+                   <div className="col s12 m4">
+                       <div className="center promo">
+                           <i className="material-icons large red-text text-lighten-2">flash_on</i>
+                           <h5>Walks Fairly Quickly</h5>
+                           <p className="light center">As well as uphill, in ski boots, and carrying things. </p>
+                       </div>
+                   </div>
+                   <div className="col s12 m4">
+                       <div className="center promo">
+                           <i className="material-icons large red-text text-lighten-2">thumb_up</i>
+                           <h5>The mandatory three column promo thing</h5>
+                           <p className="light center">I think once in a while you see one of these in two columns, but not ever four. </p>
+                       </div>
+                   </div>
+                   <div className="col s12 m4">
+                       <div className="center promo">
+                           <i className="material-icons large red-text text-lighten-2">view_module</i>
+                           <h5>Eats <emph>simple</emph> food</h5>
+                           <p className="light center">And also complex food! And for sure anything made with liquid nitrogen. </p>
+                       </div>
+                   </div>
+               </div>
+               <div className="divider"></div>
+               <div className="row center">
+                       <a className="btn-raised btn-large red lighten-2 white-text waves-effect waves-light" href="#">Buy Now!</a>
                </div>
            </div>
        </div>
-   },
-})
-
-IpsumList = React.createClass({
-
-    render () {
-
-        const ipsums = this.props.ipsums.map( (ipsum) => {
-            return <Ipsum key={ipsum.id} ipsum={ipsum} />
-        })
-
-        return <div>
-            <a className="btn waves-effect btn-raised light-blue" href="#about"> button </a>
-                <ExampleJumbotron />
-                
-                    <sections>
-                        {ipsums}
-                    </sections>
-        </div>
 
     }
 })
 
-mapStateToProps = function(state) {
-    return {
-        ipsumsLoaded: state.ipsumsLoaded,
-        ipsums: state.ipsums,
-    }
-}
-
-VisibleIpsumList = connect(mapStateToProps)(IpsumList)
-
-StickyPageNav = React.createClass({
-    render () {
-
-        ipsums = this.props.ipsums.map( (ipsum) => {
-            return <li key={ipsum.id} className="collection-item"> <a href={"#ipsum"+ipsum.id} > {ipsum.title} </a></li>
-        })
-
-        return <ul className="collection">
-                {ipsums}
-            </ul>
-    }
+exports.HomePage = React.createClass({
+   render () {
+       return <Container>
+           <HomePageCenterCol />
+       </Container>
+   }
 })
-
-VisibleStickyPageNav = connect(mapStateToProps)(StickyPageNav)
-class ExampleJumbotron extends React.Component {
-
-    render() {
-        return <div className="jumbotron" role="region" >
-            <h1>Hi rn!</h1>
-            <p>This is some p text 4 u!</p>
-            <a className="btn waves-effect btn-raised green"> click here 2 luv me </a>
-        </div>
-    }
-}
-
-
-class Ipsum extends React.Component{
-    render() {
-        return <section id={'ipsum'+this.props.ipsum.id} data-magellan-target={'ipsum'+this.props.ipsum.id}>
-                <h2>{this.props.ipsum.title}</h2>
-                <Markdown source={this.props.ipsum.text} />
-            </section>
-    }
-
-}
 

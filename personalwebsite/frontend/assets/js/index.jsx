@@ -11,12 +11,13 @@ const ReactRouter = require('react-router')
 
 const Router = ReactRouter.Router
 const Route = ReactRouter.Route
-const Link = ReactRouter.Link
 const browserHistory = ReactRouter.browerHistory
 
 require('../scss/example/example.scss')
 require('../scss/materialize/sass/materialize.scss')
+require('../scss/materialize/js/bin/materialize.min.js')
 require('materialize-css')
+
 
 $(document).ready( () => {
 
@@ -29,8 +30,9 @@ $(document).ready( () => {
     ReactDOM.render(
         <ReactRedux.Provider store={store}>
             <Router history={browserHistory}>
-                <Route path="/" component={app.ExampleComponent}> </Route>
-                <Route path="about" component={app.About}></Route>
+                <Route path="/" name="index" component={app.HomePage}> </Route>
+                <Route path="about" name="about" component={app.About}></Route>
+                <Route path="projects" name="projects" component={app.About}></Route>
             </Router>
         </ReactRedux.Provider>,
         document.getElementById('react-app')

@@ -9,6 +9,10 @@ SECRET_KEY = 'n&9rx9=fq62pu40i9erdei(dey%(vx-^qi2j_5m63$)bu(f*8v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'../frontend/assets'),
     os.path.join(BASE_DIR,'../site_static'),
@@ -37,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'webpack_loader',
-    'backend.example',
+    'backend.website',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'djangoboilerplate.urls'
+ROOT_URLCONF = 'personalwebsite.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'djangoboilerplate.wsgi.application'
+WSGI_APPLICATION = 'personalwebsite.wsgi.application'
 
 
 # Database
