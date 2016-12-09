@@ -7,11 +7,16 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   context: __dirname,
 
-  entry: './assets/js/index', // entry point of our app. assets/js/index.js should require other js modules and dependencies it needs
+  entry: [
+      'webpack-dev-server/client?http://localhost:3000',
+      'webpack/hot/only-dev-server',
+      './assets/js/index'
+  ],
 
   output: {
       path: path.resolve('./assets/bundles/'),
       filename: "[name]-[hash].js",
+      publicPath: 'http://localhost:3000/assets/bundles', // Tell django to use this for hot reload
   },
 
   plugins: [
@@ -19,6 +24,8 @@ module.exports = {
     new ExtractTextPlugin('public/style.css', {
         allChunks: true
     }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(), // don't reload if error
   ],
 
   module: {
@@ -26,10 +33,12 @@ module.exports = {
       { 
           test: /\.jsx?$/, 
           exclude: /node_modules/, 
-          loader: 'babel-loader',
+          loaders: ['react-hot-loader/webpack', 'babel-loader?presets[]=es2016,presets[]=react'],
+          /*
           query: {
               presets: ['es2016','react']
           }
+          */
       }, {
           test: /\.scss?$/,
           exclude: /node_modules/,

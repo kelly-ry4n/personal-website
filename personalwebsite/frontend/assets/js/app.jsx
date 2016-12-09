@@ -53,7 +53,7 @@ Container = React.createClass({
    render () {
        console.log(this.props)
        return <div>
-           <div id="banner" className="red lighten-2 section">
+           <div id="banner" className="green lighten-2 section">
                <div className="container fullscreen">
                        <h1 className="center-on-small-only header white-text">Kelly Ryan.</h1>
                        <div className="row center">
@@ -118,11 +118,19 @@ Container = React.createClass({
     }
 })
 
-exports.HomePage = React.createClass({
+OuterContainer = React.createClass({
    render () {
-       return <Container>
-           <HomePageCenterCol />
-       </Container>
+       return this.props.children
    }
 })
+
+class HomePage extends React.Component {
+    render() {
+       return <OuterContainer>
+           <Container />
+       </OuterContainer>
+    }
+}
+
+exports.HomePage = HomePage
 
