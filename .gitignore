@@ -91,6 +91,7 @@ personalwebsite/frontend/node_modules/
 personalwebsite/frontend/bundles/
 personalwebwite/frontend/assets/bundles/
 static/
+env/
 personalwebsite/frontend/webpack-stats.json
 
 *.swp
