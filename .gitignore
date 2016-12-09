@@ -89,8 +89,8 @@ ENV/
 .ropeproject
 
 personalwebsite/frontend/node_modules/
-personalwebsite/frontend/bundles/
-personalwebwite/frontend/assets/bundles/
+personalwebsite/frontend/assets/bundles/
+personalwebsite/frontend/assets/bundles/**
 static/
 env/
 
