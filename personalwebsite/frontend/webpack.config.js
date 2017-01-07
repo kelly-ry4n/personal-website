@@ -21,9 +21,11 @@ module.exports = {
 
   plugins: [
     new BundleTracker({filename: './webpack-stats.json'}),
+    /*
     new ExtractTextPlugin('public/style.css', {
         allChunks: true
     }),
+    */
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(), // don't reload if error
   ],
@@ -42,7 +44,8 @@ module.exports = {
       }, {
           test: /\.scss?$/,
           exclude: /node_modules/,
-          loader: ExtractTextPlugin.extract('css!sass'),
+          loaders: ["style-loader", "css-loader", "sass-loader"]
+          //loader: ExtractTextPlugin.extract('css!sass'),
       },
       { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
       { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },

@@ -17,10 +17,12 @@ require('../scss/example/example.scss')
 require('../scss/materialize/sass/materialize.scss')
 require('../scss/materialize/js/bin/materialize.min.js')
 require('materialize-css')
+require('../html/index.html')
 
 
+/*
 $(document).ready( () => {
     console.log("ready")
 
-})
+}) */
 
