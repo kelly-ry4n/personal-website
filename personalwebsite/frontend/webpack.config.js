@@ -2,6 +2,7 @@ var path = require("path")
 var webpack = require('webpack')
 var BundleTracker = require('webpack-bundle-tracker')
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 
 module.exports = {
@@ -9,8 +10,8 @@ module.exports = {
 
   entry: [
       'webpack-dev-server/client?http://localhost:3000',
-      'webpack/hot/only-dev-server',
-      './assets/js/index'
+      'webpack/hot/dev-server',
+      './assets/js/index.jsx',
   ],
 
   output: {
@@ -28,6 +29,10 @@ module.exports = {
     */
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(), // don't reload if error
+    new HtmlWebpackPlugin({
+      template: './assets/html/index.html'
+      }),
+
   ],
 
   module: {
@@ -52,7 +57,10 @@ module.exports = {
       {
             test: /\.json$/,
             loader: 'json'
-        },
+        },{
+            test: /\.html$/,
+            loader: 'raw-loader'
+    },
     ],
   },
 
