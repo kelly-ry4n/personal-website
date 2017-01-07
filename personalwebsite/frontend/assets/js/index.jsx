@@ -20,23 +20,7 @@ require('materialize-css')
 
 
 $(document).ready( () => {
+    console.log("ready")
 
-    window.store = Redux.createStore(
-        IpsumReducer.Reducer,
-        Redux.applyMiddleware(ReduxThunk),
-    )
-
-
-    ReactDOM.render(
-        <ReactRedux.Provider store={store}>
-            <Router history={browserHistory}>
-                <Route path="/" name="index" component={app.HomePage}> </Route>
-                <Route path="about" name="about" component={app.About}></Route>
-                <Route path="projects" name="projects" component={app.About}></Route>
-            </Router>
-        </ReactRedux.Provider>,
-        document.getElementById('react-app')
-    )
-    store.dispatch(ipsumActions.beginLoad())
 })
 
