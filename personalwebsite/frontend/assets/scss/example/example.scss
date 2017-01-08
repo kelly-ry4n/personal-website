@@ -2,6 +2,32 @@
 @import '../materialize/sass/components/_color.scss';
 @import '../materialize/sass/components/_variables.scss';
 
-body {
-    background-color: $primary-color;
+body html {
+    padding: 0px;
+}
+
+.divider {
+    margin: 100px;
+}
+
+.hero {
+    height: 100vh;
+    margin: 0px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @media #{$small-and-down} {
+        overflow: hidden;
+        background-image: url('http://placehold.it/825x510');
+    }
+    @media #{$medium-and-up} {
+        background-image: url('http://placehold.it/1920x1080');
+    }
+    text-align: center;
+}
+.primary-color {
+    color: $primary-color;
+}
+.secondary-color {
+    color: $secondary-color;
 }

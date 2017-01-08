@@ -28,7 +28,7 @@ module.exports = {
     }),
     */
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(), // don't reload if error
+    //new webpack.NoErrorsPlugin(), // don't reload if error
     new HtmlWebpackPlugin({
       template: './assets/html/index.html'
       }),
