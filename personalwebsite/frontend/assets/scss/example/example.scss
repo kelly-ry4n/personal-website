@@ -24,10 +24,19 @@ body html {
         background-image: url('http://placehold.it/1920x1080');
     }
     text-align: center;
+    a {
+        margin: 50px;
+    }
 }
 .primary-color {
     color: $primary-color;
 }
 .secondary-color {
     color: $secondary-color;
+}
+.btn-submit {
+    margin-bottom: 100px;
+}
+.vspace {
+    height:50px;
 }

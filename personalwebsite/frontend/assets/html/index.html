@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
     <head>
-        <title><%= htmlWebpackPlugin.options.title %></title>
+        <title>Title for Site</title>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +13,11 @@
             <div class="hero valign-wrapper center-align">
                 <div class="container">
                     <div class="row">
-                        <h4 class="title-text center-align">Title Text</h1>
+                        <h1 class="title-text center-align white-text">Title Text</h1>
                     </div>
                     <div class="row">
-                        <a class="waves-effect waves-light btn-large" href="">Button Text</a>
-                        <a class="waves-effect waves-light btn-large white grey-text" href="">Button Text</a>
+                        <a class="waves-effect waves-light btn-large z-depth-2" href="">Button Text</a>
+                        <a class="waves-effect waves-light btn-large white grey-text z-depth-2" href="">Button Text</a>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,20 @@
 
 
         <div class="container">
-        <div class="divider"></div>
+            <div class="divider"></div>
+            <div class="row">
+                <div class="col s12 center">
+                    <h2>
+                        Get the results that result
+                    </h2>
+                </div>
+                <div class="col s12 center">
+                    <p class="flow-text">
+                        Put a tagline or something here?
+                    </p>
+                </div>
+            </div>
+            <div class="vspace"></div>
             <div class="row">
                 <div class="col s12 m4">
                     <div class="card z-depth-2">
@@ -34,7 +47,9 @@
                             <span class="card-title">Title Text</span>
                         </div>
                         <div class="card-content">
-                            The description for this card
+                            <p class="flow-text">
+                                The description for this card
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -45,7 +60,9 @@
                             <span class="card-title">Title Text</span>
                         </div>
                         <div class="card-content">
-                            The description for this card
+                            <p class="flow-text">
+                                The description for this card
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -56,7 +73,9 @@
                             <span class="card-title">Title Text</span>
                         </div>
                         <div class="card-content">
-                            The description for this card
+                            <p class="flow-text">
+                                The description for this card
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -88,25 +107,42 @@
                             </div>
                         </div>
                     </div>
-                        <div class="row">
-                            <div class="col s12 hide-on-small-only">
-                                <button type="submit" class="hover btn-large waves-effect waves-light z-depth-2">
-                                    Submit
-                                    <i class="material-icons right">send</i>
-                                </button>
-                            </div>
-                            <div class="col s12 center hide-on-med-and-up">
-                                <button type="submit" class="btn-large waves-effect waves-light  center z-depth-2">
-                                    Submit
-                                    <i class="material-icons right">send</i>
-                                </button>
-                            </div>
+                    <div class="row">
+                        <div class="col s12 hide-on-small-only">
+                            <button type="submit" class="hover btn-large waves-effect waves-light z-depth-2 btn-submit">
+                                Submit
+                                <i class="material-icons right">send</i>
+                            </button>
                         </div>
+                        <div class="col s12 center hide-on-med-and-up">
+                            <button type="submit" class="btn-large waves-effect waves-light  center z-depth-2 btn-submit">
+                                Submit
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
 
-        
+        <footer class="page-footer lighten-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+                        footer text
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    <div class="s12">
+                        Copyright text 
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
 
 
         <script src="static/jquery/jquery-3.1.0.min.js"></script>
