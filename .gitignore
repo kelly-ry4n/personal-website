@@ -98,3 +98,4 @@ personalwebsite/frontend/webpack-stats.json
 
 *.swp
 *.swo
+*.DS_Store
